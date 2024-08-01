@@ -19,8 +19,7 @@ class InvoiceController(private val invoiceService: InvoiceService) {
     fun getInvoices(): List<Invoice> {
         return invoiceService.findAll()
     }
-
-
+    
     @DeleteMapping("/{id}")
     fun deleteInvoice(@PathVariable id: String): ResponseEntity<Void> {
         return if (invoiceService.deleteById(id)) {
